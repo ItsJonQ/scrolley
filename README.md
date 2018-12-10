@@ -1,6 +1,7 @@
 # 🐹 Scrolley
 
 [![Build Status](https://travis-ci.org/ItsJonQ/scrolley.svg?branch=master)](https://travis-ci.org/ItsJonQ/scrolley)
+[![npm version](https://badge.fury.io/js/scrolley.svg)](https://badge.fury.io/js/scrolley)
 
 > Extra scroll event listeners for DOM Elements!
 
