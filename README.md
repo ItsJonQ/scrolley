@@ -15,6 +15,8 @@
 
 - [Installation](#installation)
 - [Setup](#setup)
+- [Examples](#examples)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -39,3 +41,11 @@ import 'scrolley'
 ```
 
 And that's it! 🙌
+
+## Examples
+
+Check out this simply [Storybook demo](https://scrolley.netlify.com/). It was built with React. However, **Scrolley** is plain ol' vanilla JavaScript. It can work with anything JavaScript supported app, plugin, library, or framework.
+
+## License
+
+MIT © [Q](https://jonquach.com)
