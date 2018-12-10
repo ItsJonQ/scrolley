@@ -1,6 +1,6 @@
 # 🐹 Scrolley
 
-> Extra scroll event listeners on DOM Elements!
+> Extra scroll event listeners for DOM Elements!
 
 ## Features
 
