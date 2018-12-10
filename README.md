@@ -1,5 +1,7 @@
 # 🐹 Scrolley
 
+[![Build Status](https://travis-ci.org/ItsJonQ/scrolley.svg?branch=master)](https://travis-ci.org/ItsJonQ/scrolley)
+
 > Extra scroll event listeners for DOM Elements!
 
 ## Features
