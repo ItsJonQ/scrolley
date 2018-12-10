@@ -1,0 +1,77 @@
+{
+  "name": "scrolley",
+  "version": "0.0.0",
+  "description": "Extra scroll event listeners on DOM Elements!",
+  "main": "dist/index.js",
+  "source": "src/index.js",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "scripts": {
+    "prestart": "prestart",
+    "build": "zero build",
+    "build:postclean": "rm -rf dist/__tests__ && rm -rf dist/__fixtures__",
+    "bundle": "microbundle --output build",
+    "dev": "zero test --watchAll",
+    "git:push": "git push --follow-tags",
+    "lint": "zero lint",
+    "format": "zero format",
+    "validate": "zero validate",
+    "precommit": "zero precommit",
+    "start": "npm run dev",
+    "test": "zero test --coverage",
+    "test:coverage": "zero test --coverage && open ./coverage/lcov-report/index.html",
+    "clean": "rm -rf dist lib build",
+    "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
+    "release": "np --no-cleanup",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prettier": "prettier \"src/**/*.{js,ts,tsx}\" --write",
+    "pretty": "npm run prettier"
+  },
+  "author": "Jon Quach <hello@jonquach.com> (https://jonquach.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsjonq/scrolley.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsjonq/scrolley/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "scroll",
+    "scrolley",
+    "scrollUp",
+    "scrollDown",
+    "scrollTop",
+    "scrollBottom",
+    "element",
+    "eventlistener",
+    "event",
+    "addeventlistener",
+    "removeeventlistener",
+    "dom"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "devDependencies": {
+    "@helpscout/prestart": "0.0.9",
+    "@helpscout/zero": "0.0.10",
+    "@storybook/addon-actions": "^4.0.12",
+    "@storybook/addon-links": "^4.0.12",
+    "@storybook/addons": "^4.0.12",
+    "@storybook/react": "^4.0.12",
+    "babel-core": "6.26.3",
+    "babel-loader": "^7.1.5",
+    "coveralls": "3.0.2",
+    "microbundle": "0.8.3",
+    "np": "3.0.4",
+    "nyc": "13.0.0",
+    "react": "16.6.3",
+    "react-dom": "16.6.3"
+  },
+  "dependencies": {}
+}
