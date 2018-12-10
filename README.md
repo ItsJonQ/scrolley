@@ -18,6 +18,8 @@
 
 - [Installation](#installation)
 - [Setup](#setup)
+- [Usage](#usage)
+- [Events](#events)
 - [Examples](#examples)
 - [License](#license)
 
@@ -44,6 +46,52 @@ import 'scrolley'
 ```
 
 And that's it! 🙌
+
+## Usage
+
+**Scrolley**'s events can be added/removed on a DOM element, just like any other native event, like `click`, `mouseenter`, or `mousemove`.
+
+```js
+...
+// Get your Element
+const element = document.querySelector('.el')
+// Define a callback when the element scrolls
+const callbackFn = event => console.log(event)
+
+// Subscribe
+element.addEventListener('scrollDown', callbackFn)
+
+// Unsubscribe
+element.removeEventListener('scrollDown', callbackFn)
+```
+
+This library also supports a handful of other scroll events:
+
+```js
+...
+// Subscribe to events
+element.addEventListener('scrollUp', callback)
+element.addEventListener('scrollDown', callback)
+element.addEventListener('scrollTop', callback)
+element.addEventListener('scrollBottom', callback)
+
+// Unsubscribe events
+element.removeEventListener('scrollUp', callback)
+element.removeEventListener('scrollDown', callback)
+element.removeEventListener('scrollTop', callback)
+element.removeEventListener('scrollBottom', callback)
+```
+
+## Events
+
+Below are the events that this module provides:
+
+| Event name     | Description                                                              |
+| -------------- | ------------------------------------------------------------------------ |
+| `scrollUp`     | Fires immediately after the `Element` scrolls upward.                    |
+| `scrollDown`   | Fires immediately after the `Element` scrolls downward.                  |
+| `scrollTop`    | Fires immediately (once) after the `Element` scrolls to the very top.    |
+| `scrollBottom` | Fires immediately (once) after the `Element` scrolls to the very bottom. |
 
 ## Examples
 
