@@ -21,6 +21,7 @@
 - [Usage](#usage)
 - [Events](#events)
 - [Examples](#examples)
+- [See also](#see-also)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -83,6 +84,10 @@ Below are the events that this module provides:
 ## Examples
 
 Check out this simply [Storybook demo](https://scrolley.netlify.com/). It was built with React. However, **Scrolley** is plain ol' vanilla JavaScript. It can work with anything JavaScript supported app, plugin, library, or framework.
+
+## See also
+
+- [Resizey](https://github.com/ItsJonQ/resizey)
 
 ## License
 
