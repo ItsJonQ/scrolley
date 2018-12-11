@@ -5,30 +5,46 @@ function ScrollListener(element) {
 
   const state = {
     // lastScrollTop
-    l: 0,
+    t: this.element.scrollTop,
+    // lastScrollBottom
+    b: this.element.scrollTop + this.element.clientHeight,
   }
 
   function dispatch() {
-    if (this.element.scrollTop === 0) {
-      this.element.dispatchEvent(new Event('scrollTop'))
-    }
+    const isScrollUp = state.t > this.element.scrollTop
+    const isScrollDown = state.t < this.element.scrollTop
+    const scrollBottom = this.element.scrollTop + this.element.clientHeight
 
-    if (
-      this.element.scrollHeight <=
-      this.element.scrollTop + this.element.clientHeight
-    ) {
-      this.element.dispatchEvent(new Event('scrollBottom'))
-    }
-
-    if (state.l > this.element.scrollTop) {
+    // Directional
+    if (isScrollUp) {
       this.element.dispatchEvent(new Event('scrollUp'))
     }
 
-    if (state.l < this.element.scrollTop) {
+    if (isScrollDown) {
       this.element.dispatchEvent(new Event('scrollDown'))
     }
 
-    state.l = this.element.scrollTop
+    // Waypoints
+    if (this.element.scrollTop === 0) {
+      this.element.dispatchEvent(new Event('scrollToTop'))
+    }
+
+    if (this.element.scrollHeight <= scrollBottom) {
+      this.element.dispatchEvent(new Event('scrollToBottom'))
+    }
+
+    // From
+    if (state.t === 0 && isScrollDown) {
+      this.element.dispatchEvent(new Event('scrollFromTop'))
+    }
+
+    if (this.element.scrollHeight <= state.b && isScrollUp) {
+      this.element.dispatchEvent(new Event('scrollFromBottom'))
+    }
+
+    // Update the cached values in state
+    state.t = this.element.scrollTop
+    state.b = scrollBottom
   }
 
   function getState() {

@@ -8,7 +8,7 @@
 ## Features
 
 - **Zero dependencies!**
-- Super tiny, at ~500B gzipped
+- Super tiny, at ~600B gzipped
 - Ultra fast performance
 
 ## Table of contents
@@ -65,33 +65,20 @@ element.addEventListener('scrollDown', callbackFn)
 element.removeEventListener('scrollDown', callbackFn)
 ```
 
-This library also supports a handful of other scroll events:
-
-```js
-...
-// Subscribe to events
-element.addEventListener('scrollUp', callback)
-element.addEventListener('scrollDown', callback)
-element.addEventListener('scrollTop', callback)
-element.addEventListener('scrollBottom', callback)
-
-// Unsubscribe events
-element.removeEventListener('scrollUp', callback)
-element.removeEventListener('scrollDown', callback)
-element.removeEventListener('scrollTop', callback)
-element.removeEventListener('scrollBottom', callback)
-```
+This library also supports a handful of other scroll events!
 
 ## Events
 
 Below are the events that this module provides:
 
-| Event name     | Description                                                              |
-| -------------- | ------------------------------------------------------------------------ |
-| `scrollUp`     | Fires immediately after the `Element` scrolls upward.                    |
-| `scrollDown`   | Fires immediately after the `Element` scrolls downward.                  |
-| `scrollTop`    | Fires immediately (once) after the `Element` scrolls to the very top.    |
-| `scrollBottom` | Fires immediately (once) after the `Element` scrolls to the very bottom. |
+| Event name         | Description                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `scrollUp`         | Fires immediately after the `Element` scrolls upward.                        |
+| `scrollDown`       | Fires immediately after the `Element` scrolls downward.                      |
+| `scrollToTop`      | Fires immediately (once) after the `Element` scrolls to the very top.        |
+| `scrollToBottom`   | Fires immediately (once) after the `Element` scrolls to the very bottom.     |
+| `scrollFromTop`    | Fires immediately (once) after the `Element` scrolls from the very top.      |
+| `scrollFromBottom` | Fires immediately (once) after the `Element` scrolls bottom the very bottom. |
 
 ## Examples
 

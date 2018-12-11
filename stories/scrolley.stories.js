@@ -14,14 +14,18 @@ stories.add('Default', () => {
     componentDidMount() {
       this.node.addEventListener('scrollUp', this.onScrollUp)
       this.node.addEventListener('scrollDown', this.onScrollDown)
-      this.node.addEventListener('scrollTop', this.onScrollTop)
-      this.node.addEventListener('scrollBottom', this.onScrollBottom)
+      this.node.addEventListener('scrollToTop', this.onScrollTop)
+      this.node.addEventListener('scrollToBottom', this.onScrollBottom)
+      this.node.addEventListener('scrollFromTop', this.onScrollFromTop)
+      this.node.addEventListener('scrollFromBottom', this.onScrollFromBottom)
     }
     componentWillUnmount() {
       this.node.removeEventListener('scrollUp', this.onScrollUp)
       this.node.removeEventListener('scrollDown', this.onScrollDown)
-      this.node.removeEventListener('scrollTop', this.onScrollTop)
-      this.node.removeEventListener('scrollBottom', this.onScrollBottom)
+      this.node.removeEventListener('scrollToTop', this.onScrollTop)
+      this.node.removeEventListener('scrollToBottom', this.onScrollBottom)
+      this.node.removeEventListener('scrollFromTop', this.onScrollFromTop)
+      this.node.removeEventListener('scrollFromBottom', this.onScrollFromBottom)
     }
 
     onScrollUp = () => {
@@ -34,8 +38,11 @@ stories.add('Default', () => {
         direction: 'down',
       })
     }
-    onScrollTop = action('scroll top')
-    onScrollBottom = action('scroll bottom')
+    onScrollTop = action('scroll TO top')
+    onScrollBottom = action('scroll TO bottom')
+
+    onScrollFromTop = action('scroll FROM top')
+    onScrollFromBottom = action('scroll FROM bottom')
 
     render() {
       return (
