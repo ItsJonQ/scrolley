@@ -11,18 +11,26 @@ function Listeners() {
     state.push(listener)
   }
 
-  function addEventListener(element, handler) {
+  function addEventListener(element, handler, ...args) {
     if (!find(element)) {
       const listener = new ScrollListener(element, handler)
-      element.addEventListener('scroll', listener.dispatch.bind(listener))
+      element.addEventListener(
+        'scroll',
+        listener.dispatch.bind(listener),
+        ...args,
+      )
       add(listener)
     }
   }
 
-  function removeEventListener(element) {
+  function removeEventListener(element, handler, ...args) {
     const listener = find(element)
     const el = listener.element
-    element.removeEventListener('scroll', listener.dispatch.bind(listener))
+    element.removeEventListener(
+      'scroll',
+      listener.dispatch.bind(listener),
+      ...args,
+    )
     // Remove reference to DOM node, if it no longer exists
     if (!el || !el.ownerDocument.contains(el)) {
       remove(listener)
@@ -31,12 +39,6 @@ function Listeners() {
 
   function find(element) {
     return state.find(i => i.element === element)
-  }
-
-  function dispatch() {
-    for (let i = 0, len = state.length; i < len; i++) {
-      state[i].dispatch()
-    }
   }
 
   function getState() {
@@ -55,7 +57,6 @@ function Listeners() {
     add,
     addEventListener,
     clear,
-    dispatch,
     find,
     getState,
     remove,

@@ -13,7 +13,7 @@ function createEventListeners() {
     const addEvent = addEventListenerRef.bind(this)
     // Adding the custom scroll event
     if (SUPPORTED_EVENTS.includes(event)) {
-      listeners.addEventListener(this, handler)
+      listeners.addEventListener(this, handler, ...args)
     }
     // Execute the default addEventHandler function
     return addEvent(event, handler, ...args)
@@ -23,7 +23,7 @@ function createEventListeners() {
     const removeEvent = removeEventListenerRef.bind(this)
     // Removing the custom scroll event
     if (SUPPORTED_EVENTS.includes(event)) {
-      listeners.removeEventListener(this, handler)
+      listeners.removeEventListener(this, handler, ...args)
     }
     // Execute the default removeEventHandler function
     return removeEvent(event, handler, ...args)
