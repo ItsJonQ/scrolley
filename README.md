@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ItsJonQ/scrolley.svg?branch=master)](https://travis-ci.org/ItsJonQ/scrolley)
 [![npm version](https://badge.fury.io/js/scrolley.svg)](https://badge.fury.io/js/scrolley)
+[![Coverage Status](https://coveralls.io/repos/github/ItsJonQ/scrolley/badge.svg?branch=master)](https://coveralls.io/github/ItsJonQ/scrolley?branch=master)
 
 > Extra scroll event listeners for DOM Elements!
 
